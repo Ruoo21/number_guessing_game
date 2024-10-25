@@ -1,9 +1,6 @@
 import random
 import time
 
-guess_count = 0
-number_to_guess = random.randrange(1, 50)
-won = False
 print(
     "Welcome to the Number Guessing Game!\nI'm thinking of a number between 1 and 100."
 )
@@ -14,6 +11,9 @@ print("1. Easy (10 chances)")
 print("2. Medium (5 chances)")
 print("3. Hard (3 chances)\n")
 while True:
+    guess_count = 0
+    number_to_guess = random.randrange(1, 50)
+    won = False
     while True:
         try:
             difficulty_level = int(input("Enter your choice: "))
@@ -44,7 +44,9 @@ while True:
             )
             chances = 3
 
+    start_time = time.time()
     while guess_count < chances:
+
         guess = int(input("Enter your guess: "))
         if guess > number_to_guess:
             print(f"Incorrect! The number is less than {guess}.")
@@ -55,7 +57,28 @@ while True:
             guess_count += 1
             continue
         else:
+            guess_count += 1
             print(
                 f"Congratulations! You guessed the correct number in {guess_count} attempts."
             )
             won = True
+            break
+
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+    if won == False:
+        play_again = input("Looks like you lost! Want to play again? (y/n) ").lower()
+        if play_again == "y":
+            continue
+        else:
+            break
+    else:
+
+        play_again = input(
+            f"Looks like you won! It took you {elapsed_time:2f} seconds. Want to play again? (y/n) "
+        ).lower()
+
+        if play_again == "y":
+            continue
+        else:
+            break
