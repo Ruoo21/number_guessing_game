@@ -1,6 +1,7 @@
 import random
 import time
 
+high_score = 0
 print(
     "Welcome to the Number Guessing Game!\nI'm thinking of a number between 1 and 100."
 )
@@ -62,18 +63,21 @@ while True:
                 f"Congratulations! You guessed the correct number in {guess_count} attempts."
             )
             won = True
+            if guess_count < high_score or high_score == 0:
+                high_score = guess_count
             break
 
     end_time = time.time()
     elapsed_time = end_time - start_time
     if won == False:
+        print(f"Your high score is {high_score}")
         play_again = input("Looks like you lost! Want to play again? (y/n) ").lower()
         if play_again == "y":
             continue
         else:
             break
     else:
-
+        print(f"Your high score is {high_score}")
         play_again = input(
             f"Looks like you won! It took you {elapsed_time:2f} seconds. Want to play again? (y/n) "
         ).lower()
