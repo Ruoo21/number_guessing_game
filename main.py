@@ -12,7 +12,11 @@ while True:
     try:
         difficulty_level = int(input("Please select the difficulty level: "))
     except ValueError:
-        print("Please make sure your choice is a number.")
+        print("Please make sure your choice is 1, 2, or 3.")
         continue
     else:
-        break
+        if difficulty_level > 3 or difficulty_level == 0:
+            print("Please make sure your choice is 1, 2, or 3.")
+            continue
+        else:
+            break
