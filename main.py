@@ -8,4 +8,11 @@ print("You have 5 chances to guess the correct number.\n")
 print("1. Easy (10 chances)")
 print("2. Medium (5 chances)")
 print("3. Hard (3 chances)")
-difficulty_level = input("Please select the difficulty level: ")
+while True:
+    try:
+        difficulty_level = int(input("Please select the difficulty level: "))
+    except ValueError:
+        print("Please make sure your choice is a number.")
+        continue
+    else:
+        break
