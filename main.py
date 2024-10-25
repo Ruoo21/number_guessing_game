@@ -22,3 +22,17 @@ while True:
             continue
         else:
             break
+
+match difficulty_level:
+    case 1:
+        print(
+            "Great! You have selected the Easy difficulty level.\nLet's start the game!\n"
+        )
+    case 2:
+        print(
+            "Great! You have selected the Medium difficulty level.\nLet's start the game!\n"
+        )
+    case 3:
+        print(
+            "Great! You have selected the Hard difficulty level.\nLet's start the game!\n"
+        )
