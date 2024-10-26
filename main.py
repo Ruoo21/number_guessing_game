@@ -13,7 +13,7 @@ print("2. Medium (5 chances)")
 print("3. Hard (3 chances)\n")
 while True:
     guess_count = 0
-    number_to_guess = random.randrange(1, 50)
+    number_to_guess = random.randrange(1, 100)
     won = False
     while True:
         try:
