@@ -79,7 +79,7 @@ while True:
     else:
         print(f"Your high score is {high_score}")
         play_again = input(
-            f"Looks like you won! It took you {elapsed_time:2f} seconds. Want to play again? (y/n) "
+            f"Looks like you won! It took you {elapsed_time:.2f} seconds. Want to play again? (y/n) "
         ).lower()
 
         if play_again == "y":
